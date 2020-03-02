@@ -5,7 +5,7 @@ A basic piggy bank example on Ethereum by using Truffle Suite and Solidity 0.6.0
 ## Road Map
  - [x] Basic Contract
  - [x] Test Contract
- - [ ] React Web Interface
+ - [ ] React Web Interface with Drizzle
  - [ ] Blockchain Network Creation
 
 
