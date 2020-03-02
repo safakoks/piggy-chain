@@ -1,0 +1,1964 @@
+{
+  "contractName": "Piggy",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "uint8",
+              "name": "age",
+              "type": "uint8"
+            }
+          ],
+          "internalType": "struct Piggy.UserData",
+          "name": "_userData",
+          "type": "tuple"
+        }
+      ],
+      "name": "setUser",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_moneyAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "addMoney",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_moneyAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdrawMoney",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getBalance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [],
+      "name": "getUserData",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "uint8",
+              "name": "age",
+              "type": "uint8"
+            }
+          ],
+          "internalType": "struct Piggy.UserData",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.0+commit.26b70077\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_moneyAmount\",\"type\":\"uint256\"}],\"name\":\"addMoney\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUserData\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"uint8\",\"name\":\"age\",\"type\":\"uint8\"}],\"internalType\":\"struct Piggy.UserData\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"uint8\",\"name\":\"age\",\"type\":\"uint8\"}],\"internalType\":\"struct Piggy.UserData\",\"name\":\"_userData\",\"type\":\"tuple\"}],\"name\":\"setUser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_moneyAmount\",\"type\":\"uint256\"}],\"name\":\"withdrawMoney\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/safak/myworkshop/tubuarge/free-zone/trufflesuite-test/contracts/Piggy.sol\":\"Piggy\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/safak/myworkshop/tubuarge/free-zone/trufflesuite-test/contracts/Piggy.sol\":{\"keccak256\":\"0x4a832d7e2aa32b110b03a34b754b8d22d269b2acd00a8df1fb02f1ef6980283f\",\"urls\":[\"bzz-raw://c6312b5dc04668f0af281a9ab0db823cc28cb2176015d44d3c84a5403ea7ffc6\",\"dweb:/ipfs/QmZgzmxjfhg7ZFRC8SimeGRpdeoF45KTtehYtXQ4bP1NAC\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061078d806100206000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806312065fe01461005c57806322e8c87d1461007a578063548769211461009857806398c0717f146100b4578063d0bc1a88146100d0575b600080fd5b6100646100ec565b604051610071919061062f565b60405180910390f35b610082610133565b60405161008f919061060d565b60405180910390f35b6100b260048036036100ad9190810190610550565b610248565b005b6100ce60048036036100c9919081019061050f565b610298565b005b6100ea60048036036100e59190810190610550565b61031b565b005b6000600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905090565b61013b61036b565b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020604051806040016040529081600082018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561021d5780601f106101f25761010080835404028352916020019161021d565b820191906000526020600020905b81548152906001019060200180831161020057829003601f168201915b505050505081526020016001820160009054906101000a900460ff1660ff1660ff1681525050905090565b80600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555050565b806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000190805190602001906102f3929190610388565b5060208201518160010160006101000a81548160ff021916908360ff16021790555090505050565b80600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254019250508190555050565b604051806040016040528060608152602001600060ff1681525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106103c957805160ff19168380011785556103f7565b828001600101855582156103f7579182015b828111156103f65782518255916020019190600101906103db565b5b5090506104049190610408565b5090565b61042a91905b8082111561042657600081600090555060010161040e565b5090565b90565b600082601f83011261043e57600080fd5b813561045161044c82610677565b61064a565b9150808252602083016020830185838301111561046d57600080fd5b6104788382846106d6565b50505092915050565b60006040828403121561049357600080fd5b61049d604061064a565b9050600082013567ffffffffffffffff8111156104b957600080fd5b6104c58482850161042d565b60008301525060206104d9848285016104fa565b60208301525092915050565b6000813590506104f481610729565b92915050565b60008135905061050981610740565b92915050565b60006020828403121561052157600080fd5b600082013567ffffffffffffffff81111561053b57600080fd5b61054784828501610481565b91505092915050565b60006020828403121561056257600080fd5b6000610570848285016104e5565b91505092915050565b6000610584826106a3565b61058e81856106ae565b935061059e8185602086016106e5565b6105a781610718565b840191505092915050565b600060408301600083015184820360008601526105cf8282610579565b91505060208301516105e460208601826105fe565b508091505092915050565b6105f8816106bf565b82525050565b610607816106c9565b82525050565b6000602082019050818103600083015261062781846105b2565b905092915050565b600060208201905061064460008301846105ef565b92915050565b6000604051905081810181811067ffffffffffffffff8211171561066d57600080fd5b8060405250919050565b600067ffffffffffffffff82111561068e57600080fd5b601f19601f8301169050602081019050919050565b600081519050919050565b600082825260208201905092915050565b6000819050919050565b600060ff82169050919050565b82818337600083830152505050565b60005b838110156107035780820151818401526020810190506106e8565b83811115610712576000848401525b50505050565b6000601f19601f8301169050919050565b610732816106bf565b811461073d57600080fd5b50565b610749816106c9565b811461075457600080fd5b5056fea26469706673582212209df614e3c65378c7e580df5b36f697afacabff72e5e768f03ce8cc2da6c6e43b64736f6c63430006000033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c806312065fe01461005c57806322e8c87d1461007a578063548769211461009857806398c0717f146100b4578063d0bc1a88146100d0575b600080fd5b6100646100ec565b604051610071919061062f565b60405180910390f35b610082610133565b60405161008f919061060d565b60405180910390f35b6100b260048036036100ad9190810190610550565b610248565b005b6100ce60048036036100c9919081019061050f565b610298565b005b6100ea60048036036100e59190810190610550565b61031b565b005b6000600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905090565b61013b61036b565b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020604051806040016040529081600082018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561021d5780601f106101f25761010080835404028352916020019161021d565b820191906000526020600020905b81548152906001019060200180831161020057829003601f168201915b505050505081526020016001820160009054906101000a900460ff1660ff1660ff1681525050905090565b80600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555050565b806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000190805190602001906102f3929190610388565b5060208201518160010160006101000a81548160ff021916908360ff16021790555090505050565b80600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254019250508190555050565b604051806040016040528060608152602001600060ff1681525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106103c957805160ff19168380011785556103f7565b828001600101855582156103f7579182015b828111156103f65782518255916020019190600101906103db565b5b5090506104049190610408565b5090565b61042a91905b8082111561042657600081600090555060010161040e565b5090565b90565b600082601f83011261043e57600080fd5b813561045161044c82610677565b61064a565b9150808252602083016020830185838301111561046d57600080fd5b6104788382846106d6565b50505092915050565b60006040828403121561049357600080fd5b61049d604061064a565b9050600082013567ffffffffffffffff8111156104b957600080fd5b6104c58482850161042d565b60008301525060206104d9848285016104fa565b60208301525092915050565b6000813590506104f481610729565b92915050565b60008135905061050981610740565b92915050565b60006020828403121561052157600080fd5b600082013567ffffffffffffffff81111561053b57600080fd5b61054784828501610481565b91505092915050565b60006020828403121561056257600080fd5b6000610570848285016104e5565b91505092915050565b6000610584826106a3565b61058e81856106ae565b935061059e8185602086016106e5565b6105a781610718565b840191505092915050565b600060408301600083015184820360008601526105cf8282610579565b91505060208301516105e460208601826105fe565b508091505092915050565b6105f8816106bf565b82525050565b610607816106c9565b82525050565b6000602082019050818103600083015261062781846105b2565b905092915050565b600060208201905061064460008301846105ef565b92915050565b6000604051905081810181811067ffffffffffffffff8211171561066d57600080fd5b8060405250919050565b600067ffffffffffffffff82111561068e57600080fd5b601f19601f8301169050602081019050919050565b600081519050919050565b600082825260208201905092915050565b6000819050919050565b600060ff82169050919050565b82818337600083830152505050565b60005b838110156107035780820151818401526020810190506106e8565b83811115610712576000848401525b50505050565b6000601f19601f8301169050919050565b610732816106bf565b811461073d57600080fd5b50565b610749816106c9565b811461075457600080fd5b5056fea26469706673582212209df614e3c65378c7e580df5b36f697afacabff72e5e768f03ce8cc2da6c6e43b64736f6c63430006000033",
+  "sourceMap": "60:729:1:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;60:729:1;;;;;;;",
+  "deployedSourceMap": "60:729:1:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;60:729:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;573:98;;;:::i;:::-;;;;;;;;;;;;;;;;677:109;;;:::i;:::-;;;;;;;;;;;;;;;;459:108;;;;;;;;;;;;;;;;:::i;:::-;;239:104;;;;;;;;;;;;;;;;:::i;:::-;;350:103;;;;;;;;;;;;;;;;:::i;:::-;;573:98;615:4;639:12;:24;652:10;639:24;;;;;;;;;;;;;;;;632:31;;573:98;:::o;677:109::-;720:15;;:::i;:::-;755:11;:23;767:10;755:23;;;;;;;;;;;;;;;748:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;677:109;:::o;459:108::-;547:12;519;:24;532:10;519:24;;;;;;;;;;;;;;;;:40;;;;;;;;;;;459:108;:::o;239:104::-;327:9;301:11;:23;313:10;301:23;;;;;;;;;;;;;;;:35;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;239:104;:::o;350:103::-;433:12;405;:24;418:10;405:24;;;;;;;;;;;;;;;;:40;;;;;;;;;;;350:103;:::o;60:729::-;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;6:434:-1:-;;104:3;97:4;89:6;85:17;81:27;71:2;;122:1;119;112:12;71:2;159:6;146:20;181:61;196:45;234:6;196:45;;;181:61;;;172:70;;262:6;255:5;248:21;298:4;290:6;286:17;331:4;324:5;320:16;366:3;357:6;352:3;348:16;345:25;342:2;;;383:1;380;373:12;342:2;393:41;427:6;422:3;417;393:41;;;64:376;;;;;;;;476:555;;589:4;577:9;572:3;568:19;564:30;561:2;;;607:1;604;597:12;561:2;625:20;640:4;625:20;;;616:29;;723:1;712:9;708:17;695:31;746:18;738:6;735:30;732:2;;;778:1;775;768:12;732:2;813:55;864:3;855:6;844:9;840:22;813:55;;;806:4;799:5;795:16;788:81;655:225;929:2;962:47;1005:3;996:6;985:9;981:22;962:47;;;955:4;948:5;944:16;937:73;890:131;555:476;;;;;1038:130;;1118:6;1105:20;1096:29;;1130:33;1157:5;1130:33;;;1090:78;;;;;1175:126;;1253:6;1240:20;1231:29;;1265:31;1290:5;1265:31;;;1225:76;;;;;1308:375;;1436:2;1424:9;1415:7;1411:23;1407:32;1404:2;;;1452:1;1449;1442:12;1404:2;1515:1;1504:9;1500:17;1487:31;1538:18;1530:6;1527:30;1524:2;;;1570:1;1567;1560:12;1524:2;1590:77;1659:7;1650:6;1639:9;1635:22;1590:77;;;1580:87;;1466:207;1398:285;;;;;1690:241;;1794:2;1782:9;1773:7;1769:23;1765:32;1762:2;;;1810:1;1807;1800:12;1762:2;1845:1;1862:53;1907:7;1898:6;1887:9;1883:22;1862:53;;;1852:63;;1824:97;1756:175;;;;;1938:319;;2036:35;2065:5;2036:35;;;2083:61;2137:6;2132:3;2083:61;;;2076:68;;2149:52;2194:6;2189:3;2182:4;2175:5;2171:16;2149:52;;;2222:29;2244:6;2222:29;;;2217:3;2213:39;2206:46;;2016:241;;;;;;2317:560;;2466:4;2461:3;2457:14;2549:4;2542:5;2538:16;2532:23;2601:3;2595:4;2591:14;2584:4;2579:3;2575:14;2568:38;2621:69;2685:4;2671:12;2621:69;;;2613:77;;2486:216;2774:4;2767:5;2763:16;2757:23;2786:59;2839:4;2834:3;2830:14;2816:12;2786:59;;;2712:139;2868:4;2861:11;;2439:438;;;;;;2884:113;2967:24;2985:5;2967:24;;;2962:3;2955:37;2949:48;;;3004:97;3073:22;3089:5;3073:22;;;3068:3;3061:35;3055:46;;;3108:357;;3274:2;3263:9;3259:18;3251:26;;3324:9;3318:4;3314:20;3310:1;3299:9;3295:17;3288:47;3349:106;3450:4;3441:6;3349:106;;;3341:114;;3245:220;;;;;3472:213;;3590:2;3579:9;3575:18;3567:26;;3604:71;3672:1;3661:9;3657:17;3648:6;3604:71;;;3561:124;;;;;3692:256;;3754:2;3748:9;3738:19;;3792:4;3784:6;3780:17;3891:6;3879:10;3876:22;3855:18;3843:10;3840:34;3837:62;3834:2;;;3912:1;3909;3902:12;3834:2;3932:10;3928:2;3921:22;3732:216;;;;;3955:318;;4095:18;4087:6;4084:30;4081:2;;;4127:1;4124;4117:12;4081:2;4194:4;4190:9;4183:4;4175:6;4171:17;4167:33;4159:41;;4258:4;4252;4248:15;4240:23;;4018:255;;;;4280:118;;4370:5;4364:12;4354:22;;4335:63;;;;4406:153;;4511:6;4506:3;4499:19;4548:4;4543:3;4539:14;4524:29;;4492:67;;;;;4567:72;;4629:5;4618:16;;4612:27;;;;4646:81;;4717:4;4710:5;4706:16;4695:27;;4689:38;;;;4735:145;4816:6;4811:3;4806;4793:30;4872:1;4863:6;4858:3;4854:16;4847:27;4786:94;;;;4889:268;4954:1;4961:101;4975:6;4972:1;4969:13;4961:101;;;5051:1;5046:3;5042:11;5036:18;5032:1;5027:3;5023:11;5016:39;4997:2;4994:1;4990:10;4985:15;;4961:101;;;5077:6;5074:1;5071:13;5068:2;;;5142:1;5133:6;5128:3;5124:16;5117:27;5068:2;4938:219;;;;;5165:97;;5253:2;5249:7;5244:2;5237:5;5233:14;5229:28;5219:38;;5213:49;;;;5270:117;5339:24;5357:5;5339:24;;;5332:5;5329:35;5319:2;;5378:1;5375;5368:12;5319:2;5313:74;;5394:113;5461:22;5477:5;5461:22;;;5454:5;5451:33;5441:2;;5498:1;5495;5488:12;5441:2;5435:72;",
+  "source": "pragma solidity ^0.6.0;\npragma experimental ABIEncoderV2;\n\n\ncontract Piggy{\n\n    mapping(address => UserData) UserDataMap;\n    mapping(address => uint) UserMoneyMap;\n\n    struct UserData{\n        string name;\n        uint8 age;\n    }\n\n    function setUser(UserData memory _userData) public {\n\n        UserDataMap[msg.sender] = _userData;\n    }\n\n\n    function addMoney(uint _moneyAmount) public {\n\n        UserMoneyMap[msg.sender] += _moneyAmount;\n\n    }\n\n    function withdrawMoney(uint _moneyAmount) public {\n\n        UserMoneyMap[msg.sender] -= _moneyAmount;\n\n    }\n\n    function getBalance() public view returns(uint) {\n\n        return UserMoneyMap[msg.sender];\n\n    }\n\n    function getUserData() public view returns(UserData memory) {\n\n        return UserDataMap[msg.sender];\n\n    }\n\n}\n",
+  "sourcePath": "/home/safak/myworkshop/tubuarge/free-zone/trufflesuite-test/contracts/Piggy.sol",
+  "ast": {
+    "absolutePath": "/home/safak/myworkshop/tubuarge/free-zone/trufflesuite-test/contracts/Piggy.sol",
+    "exportedSymbols": {
+      "Piggy": [
+        114
+      ]
+    },
+    "id": 115,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 38,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "id": 39,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "24:33:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 114,
+        "linearizedBaseContracts": [
+          114
+        ],
+        "name": "Piggy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 43,
+            "name": "UserDataMap",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 114,
+            "src": "81:40:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserData_$52_storage_$",
+              "typeString": "mapping(address => struct Piggy.UserData)"
+            },
+            "typeName": {
+              "id": 42,
+              "keyType": {
+                "id": 40,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "89:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "81:28:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserData_$52_storage_$",
+                "typeString": "mapping(address => struct Piggy.UserData)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 41,
+                "name": "UserData",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 52,
+                "src": "100:8:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_UserData_$52_storage_ptr",
+                  "typeString": "struct Piggy.UserData"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 47,
+            "name": "UserMoneyMap",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 114,
+            "src": "127:37:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+              "typeString": "mapping(address => uint256)"
+            },
+            "typeName": {
+              "id": 46,
+              "keyType": {
+                "id": 44,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "135:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "127:24:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                "typeString": "mapping(address => uint256)"
+              },
+              "valueType": {
+                "id": 45,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "146:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "Piggy.UserData",
+            "id": 52,
+            "members": [
+              {
+                "constant": false,
+                "id": 49,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 52,
+                "src": "196:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 48,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "196:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 51,
+                "name": "age",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 52,
+                "src": "217:9:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 50,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "217:5:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "UserData",
+            "nodeType": "StructDefinition",
+            "scope": 114,
+            "src": "171:62:1",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 64,
+              "nodeType": "Block",
+              "src": "290:53:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 62,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 57,
+                        "name": "UserDataMap",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 43,
+                        "src": "301:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserData_$52_storage_$",
+                          "typeString": "mapping(address => struct Piggy.UserData storage ref)"
+                        }
+                      },
+                      "id": 60,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 58,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 129,
+                          "src": "313:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 59,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "313:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "301:23:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_UserData_$52_storage",
+                        "typeString": "struct Piggy.UserData storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 61,
+                      "name": "_userData",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 54,
+                      "src": "327:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_UserData_$52_memory_ptr",
+                        "typeString": "struct Piggy.UserData memory"
+                      }
+                    },
+                    "src": "301:35:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_UserData_$52_storage",
+                      "typeString": "struct Piggy.UserData storage ref"
+                    }
+                  },
+                  "id": 63,
+                  "nodeType": "ExpressionStatement",
+                  "src": "301:35:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "98c0717f",
+            "id": 65,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setUser",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 55,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 54,
+                  "name": "_userData",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 65,
+                  "src": "256:25:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_UserData_$52_memory_ptr",
+                    "typeString": "struct Piggy.UserData"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 53,
+                    "name": "UserData",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 52,
+                    "src": "256:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_UserData_$52_storage_ptr",
+                      "typeString": "struct Piggy.UserData"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "255:27:1"
+            },
+            "returnParameters": {
+              "id": 56,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "290:0:1"
+            },
+            "scope": 114,
+            "src": "239:104:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 77,
+              "nodeType": "Block",
+              "src": "394:59:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 75,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 70,
+                        "name": "UserMoneyMap",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 47,
+                        "src": "405:12:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                          "typeString": "mapping(address => uint256)"
+                        }
+                      },
+                      "id": 73,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 71,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 129,
+                          "src": "418:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 72,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "418:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "405:24:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "+=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 74,
+                      "name": "_moneyAmount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 67,
+                      "src": "433:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "405:40:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 76,
+                  "nodeType": "ExpressionStatement",
+                  "src": "405:40:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "d0bc1a88",
+            "id": 78,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addMoney",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 68,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 67,
+                  "name": "_moneyAmount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 78,
+                  "src": "368:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 66,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "368:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "367:19:1"
+            },
+            "returnParameters": {
+              "id": 69,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "394:0:1"
+            },
+            "scope": 114,
+            "src": "350:103:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 90,
+              "nodeType": "Block",
+              "src": "508:59:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 88,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 83,
+                        "name": "UserMoneyMap",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 47,
+                        "src": "519:12:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                          "typeString": "mapping(address => uint256)"
+                        }
+                      },
+                      "id": 86,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 84,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 129,
+                          "src": "532:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 85,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "532:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "519:24:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "-=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 87,
+                      "name": "_moneyAmount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 80,
+                      "src": "547:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "519:40:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 89,
+                  "nodeType": "ExpressionStatement",
+                  "src": "519:40:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "54876921",
+            "id": 91,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "withdrawMoney",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 81,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 80,
+                  "name": "_moneyAmount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 91,
+                  "src": "482:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 79,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "482:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "481:19:1"
+            },
+            "returnParameters": {
+              "id": 82,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "508:0:1"
+            },
+            "scope": 114,
+            "src": "459:108:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 101,
+              "nodeType": "Block",
+              "src": "621:50:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 96,
+                      "name": "UserMoneyMap",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 47,
+                      "src": "639:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                        "typeString": "mapping(address => uint256)"
+                      }
+                    },
+                    "id": 99,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 97,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 129,
+                        "src": "652:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 98,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "652:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "639:24:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 95,
+                  "id": 100,
+                  "nodeType": "Return",
+                  "src": "632:31:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "12065fe0",
+            "id": 102,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getBalance",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 92,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "592:2:1"
+            },
+            "returnParameters": {
+              "id": 95,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 94,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 102,
+                  "src": "615:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 93,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "615:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "614:6:1"
+            },
+            "scope": 114,
+            "src": "573:98:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 112,
+              "nodeType": "Block",
+              "src": "737:49:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 107,
+                      "name": "UserDataMap",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 43,
+                      "src": "755:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserData_$52_storage_$",
+                        "typeString": "mapping(address => struct Piggy.UserData storage ref)"
+                      }
+                    },
+                    "id": 110,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 108,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 129,
+                        "src": "767:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 109,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "767:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "755:23:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_UserData_$52_storage",
+                      "typeString": "struct Piggy.UserData storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 106,
+                  "id": 111,
+                  "nodeType": "Return",
+                  "src": "748:30:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "22e8c87d",
+            "id": 113,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getUserData",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 103,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "697:2:1"
+            },
+            "returnParameters": {
+              "id": 106,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 105,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 113,
+                  "src": "720:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_UserData_$52_memory_ptr",
+                    "typeString": "struct Piggy.UserData"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 104,
+                    "name": "UserData",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 52,
+                    "src": "720:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_UserData_$52_storage_ptr",
+                      "typeString": "struct Piggy.UserData"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "719:17:1"
+            },
+            "scope": 114,
+            "src": "677:109:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 115,
+        "src": "60:729:1"
+      }
+    ],
+    "src": "0:790:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/safak/myworkshop/tubuarge/free-zone/trufflesuite-test/contracts/Piggy.sol",
+    "exportedSymbols": {
+      "Piggy": [
+        114
+      ]
+    },
+    "id": 115,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 38,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "id": 39,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "24:33:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 114,
+        "linearizedBaseContracts": [
+          114
+        ],
+        "name": "Piggy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 43,
+            "name": "UserDataMap",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 114,
+            "src": "81:40:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserData_$52_storage_$",
+              "typeString": "mapping(address => struct Piggy.UserData)"
+            },
+            "typeName": {
+              "id": 42,
+              "keyType": {
+                "id": 40,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "89:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "81:28:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserData_$52_storage_$",
+                "typeString": "mapping(address => struct Piggy.UserData)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 41,
+                "name": "UserData",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 52,
+                "src": "100:8:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_UserData_$52_storage_ptr",
+                  "typeString": "struct Piggy.UserData"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 47,
+            "name": "UserMoneyMap",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 114,
+            "src": "127:37:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+              "typeString": "mapping(address => uint256)"
+            },
+            "typeName": {
+              "id": 46,
+              "keyType": {
+                "id": 44,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "135:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "127:24:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                "typeString": "mapping(address => uint256)"
+              },
+              "valueType": {
+                "id": 45,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "146:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "Piggy.UserData",
+            "id": 52,
+            "members": [
+              {
+                "constant": false,
+                "id": 49,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 52,
+                "src": "196:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 48,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "196:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 51,
+                "name": "age",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 52,
+                "src": "217:9:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 50,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "217:5:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "UserData",
+            "nodeType": "StructDefinition",
+            "scope": 114,
+            "src": "171:62:1",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 64,
+              "nodeType": "Block",
+              "src": "290:53:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 62,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 57,
+                        "name": "UserDataMap",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 43,
+                        "src": "301:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserData_$52_storage_$",
+                          "typeString": "mapping(address => struct Piggy.UserData storage ref)"
+                        }
+                      },
+                      "id": 60,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 58,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 129,
+                          "src": "313:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 59,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "313:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "301:23:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_UserData_$52_storage",
+                        "typeString": "struct Piggy.UserData storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 61,
+                      "name": "_userData",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 54,
+                      "src": "327:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_UserData_$52_memory_ptr",
+                        "typeString": "struct Piggy.UserData memory"
+                      }
+                    },
+                    "src": "301:35:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_UserData_$52_storage",
+                      "typeString": "struct Piggy.UserData storage ref"
+                    }
+                  },
+                  "id": 63,
+                  "nodeType": "ExpressionStatement",
+                  "src": "301:35:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "98c0717f",
+            "id": 65,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setUser",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 55,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 54,
+                  "name": "_userData",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 65,
+                  "src": "256:25:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_UserData_$52_memory_ptr",
+                    "typeString": "struct Piggy.UserData"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 53,
+                    "name": "UserData",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 52,
+                    "src": "256:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_UserData_$52_storage_ptr",
+                      "typeString": "struct Piggy.UserData"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "255:27:1"
+            },
+            "returnParameters": {
+              "id": 56,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "290:0:1"
+            },
+            "scope": 114,
+            "src": "239:104:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 77,
+              "nodeType": "Block",
+              "src": "394:59:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 75,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 70,
+                        "name": "UserMoneyMap",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 47,
+                        "src": "405:12:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                          "typeString": "mapping(address => uint256)"
+                        }
+                      },
+                      "id": 73,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 71,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 129,
+                          "src": "418:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 72,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "418:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "405:24:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "+=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 74,
+                      "name": "_moneyAmount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 67,
+                      "src": "433:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "405:40:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 76,
+                  "nodeType": "ExpressionStatement",
+                  "src": "405:40:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "d0bc1a88",
+            "id": 78,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addMoney",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 68,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 67,
+                  "name": "_moneyAmount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 78,
+                  "src": "368:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 66,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "368:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "367:19:1"
+            },
+            "returnParameters": {
+              "id": 69,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "394:0:1"
+            },
+            "scope": 114,
+            "src": "350:103:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 90,
+              "nodeType": "Block",
+              "src": "508:59:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 88,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 83,
+                        "name": "UserMoneyMap",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 47,
+                        "src": "519:12:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                          "typeString": "mapping(address => uint256)"
+                        }
+                      },
+                      "id": 86,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 84,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 129,
+                          "src": "532:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 85,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "532:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "519:24:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "-=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 87,
+                      "name": "_moneyAmount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 80,
+                      "src": "547:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "519:40:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 89,
+                  "nodeType": "ExpressionStatement",
+                  "src": "519:40:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "54876921",
+            "id": 91,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "withdrawMoney",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 81,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 80,
+                  "name": "_moneyAmount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 91,
+                  "src": "482:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 79,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "482:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "481:19:1"
+            },
+            "returnParameters": {
+              "id": 82,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "508:0:1"
+            },
+            "scope": 114,
+            "src": "459:108:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 101,
+              "nodeType": "Block",
+              "src": "621:50:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 96,
+                      "name": "UserMoneyMap",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 47,
+                      "src": "639:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                        "typeString": "mapping(address => uint256)"
+                      }
+                    },
+                    "id": 99,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 97,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 129,
+                        "src": "652:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 98,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "652:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "639:24:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 95,
+                  "id": 100,
+                  "nodeType": "Return",
+                  "src": "632:31:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "12065fe0",
+            "id": 102,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getBalance",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 92,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "592:2:1"
+            },
+            "returnParameters": {
+              "id": 95,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 94,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 102,
+                  "src": "615:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 93,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "615:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "614:6:1"
+            },
+            "scope": 114,
+            "src": "573:98:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 112,
+              "nodeType": "Block",
+              "src": "737:49:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 107,
+                      "name": "UserDataMap",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 43,
+                      "src": "755:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_UserData_$52_storage_$",
+                        "typeString": "mapping(address => struct Piggy.UserData storage ref)"
+                      }
+                    },
+                    "id": 110,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 108,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 129,
+                        "src": "767:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 109,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "767:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "755:23:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_UserData_$52_storage",
+                      "typeString": "struct Piggy.UserData storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 106,
+                  "id": 111,
+                  "nodeType": "Return",
+                  "src": "748:30:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "22e8c87d",
+            "id": 113,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getUserData",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 103,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "697:2:1"
+            },
+            "returnParameters": {
+              "id": 106,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 105,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 113,
+                  "src": "720:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_UserData_$52_memory_ptr",
+                    "typeString": "struct Piggy.UserData"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 104,
+                    "name": "UserData",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 52,
+                    "src": "720:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_UserData_$52_storage_ptr",
+                      "typeString": "struct Piggy.UserData"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "719:17:1"
+            },
+            "scope": 114,
+            "src": "677:109:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 115,
+        "src": "60:729:1"
+      }
+    ],
+    "src": "0:790:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.0+commit.26b70077.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x28206D0047667A31BB48A29e46aCF0Dd965E5C0f",
+      "transactionHash": "0x882cb14179991514ad87d777831275f2bd9d220c1c8afb36e3b75f61be5bacb5"
+    }
+  },
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-02-28T21:48:53.249Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
