@@ -14,11 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-
-
-pragma solidity ^0.6.0;
-pragma experimental ABIEncoderV2;
-
+pragma solidity >=0.4.21 <0.7.0;
 
 contract Piggy{
 
@@ -30,20 +26,24 @@ contract Piggy{
         uint8 age;
     }
 
-    function setUser(UserData memory _userData) public {
-
-        UserDataMap[msg.sender] = _userData;
+    function setUser( string memory _name, uint8 _age) public {
+        UserDataMap[msg.sender] = UserData({
+            name: _name,
+            age: _age
+        });
     }
 
 
     function addMoney(uint _moneyAmount) public {
-
+        
+        require(_moneyAmount > 0, "Money amount must be greater than 0.");
         UserMoneyMap[msg.sender] += _moneyAmount;
 
     }
 
     function withdrawMoney(uint _moneyAmount) public {
 
+        require(_moneyAmount > 0, "Money amount must be greater than 0.");
         UserMoneyMap[msg.sender] -= _moneyAmount;
 
     }
@@ -54,9 +54,9 @@ contract Piggy{
 
     }
 
-    function getUserData() public view returns(UserData memory) {
+    function getUserData() public view returns(string memory, uint8) {
 
-        return UserDataMap[msg.sender];
+        return (UserDataMap[msg.sender].name, UserDataMap[msg.sender].age);
 
     }
 
