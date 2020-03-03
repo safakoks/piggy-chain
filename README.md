@@ -29,7 +29,8 @@ RPC URL can be changed in `truffle-config.js`
 ## Getting Start
 Generate a network with Truffle
 ```bash
-truffle develop
+truffle compile;
+truffle develop;
 ```
 Migrate the contracts inside the develop mode of Truffle
 ```bash
