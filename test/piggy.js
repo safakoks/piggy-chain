@@ -27,17 +27,17 @@ contract("Piggy", (accounts) =>{
         let newAccount1 = accounts[0];
         let newAccount2 = accounts[1];
 
-        await instance.setUser({ name : "Ornek1" , age: 15 }, { from : newAccount1 });
-        await instance.setUser({ name : "Ornek2" , age: 16 }, { from : newAccount2 });
+        await instance.setUser("Ornek1" , 15 , { from : newAccount1 });
+        await instance.setUser("Ornek2" , 16, { from : newAccount2 });
 
         let returnedUserData1 = await instance.getUserData({ from : newAccount1 });
         let returnedUserData2 = await instance.getUserData({ from : newAccount2 });
+        console.log(returnedUserData1)
+        assert.equal("Ornek1", returnedUserData1[0],"name was not equal");
+        assert.equal(15, returnedUserData1[1],"age was not equal");
 
-        assert.equal("Ornek1", returnedUserData1.name,"name was not equal");
-        assert.equal(15, returnedUserData1.age,"age was not equal");
-
-        assert.equal("Ornek2", returnedUserData2.name,"name was not equal");
-        assert.equal(16, returnedUserData2.age,"age was not equal");
+        assert.equal("Ornek2", returnedUserData2[0],"name was not equal");
+        assert.equal(16, returnedUserData2[1],"age was not equal");
 
     })
 
