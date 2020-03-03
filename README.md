@@ -1,12 +1,14 @@
 # Piggy Bank
 ![Piggy Bank](src/piggy.png?raw=true "Title")
 
-A basic piggy bank example on Ethereum by using Truffle Suite and Solidity 0.6.0
+A basic piggy bank example on Ethereum by using Truffle Suite and Solidity 0.5.13
 ## Road Map
- - [x] Basic Contract
- - [x] Test Contract
+ - [x] Basic Contract and Test
  - [ ] React Web Interface with Drizzle
- - [ ] Blockchain Network Creation
+ - [ ] Custom Template
+ - [ ] Complex Contract and Test
+ - [ ] MetaMask Integration
+ - [ ] Blockchain Network Creation for Quorum
 
 
 
