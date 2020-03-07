@@ -26,24 +26,27 @@ contract Piggy{
         uint8 age;
     }
 
-    function setUser( string memory _name, uint8 _age) public {
+    function setUser(string memory _name, uint8 _age) public {
         UserDataMap[msg.sender] = UserData({
             name: _name,
             age: _age
         });
     }
 
+    function addMoney(uint _moneyAmount) public{
+        require (_moneyAmount < 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF,
+            "Money amount must be greater than 0");
 
-    function addMoney(uint _moneyAmount) public {
-        
-        require(_moneyAmount > 0, "Money amount must be greater than 0.");
         UserMoneyMap[msg.sender] += _moneyAmount;
 
     }
 
     function withdrawMoney(uint _moneyAmount) public {
+        require (_moneyAmount < 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF,
+            "Money amount must be greater than 0");
+        require(UserMoneyMap[msg.sender] >= _moneyAmount,
+        "Money amount must be less or equal than balance");
 
-        require(_moneyAmount > 0, "Money amount must be greater than 0.");
         UserMoneyMap[msg.sender] -= _moneyAmount;
 
     }
