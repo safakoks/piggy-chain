@@ -1,10 +1,12 @@
 # Piggy Bank
-![Piggy Bank](assets/piggy.svg?raw=true "Title")
+![Piggy Bank](assets/piggy.svg "piggy-chain")
+<img src="./assets/piggy.svg.svg">
 
 A basic piggy bank example on Ethereum by using Truffle Suite and Solidity 0.5.13
 ## Road Map
+
  - [x] Basic Contract and Test
- - [ ] React Web Interface with Drizzle
+ - [x] React Web Interface with Drizzle
  - [ ] Custom Template
  - [ ] Complex Contract and Test
  - [ ] MetaMask Integration
