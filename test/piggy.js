@@ -18,57 +18,134 @@ const Piggy = artifacts.require("Piggy");
 
 
 
-contract("Piggy", (accounts) =>{
+contract("Piggy", async (accounts) =>{
+    let instance;
 
-    it("should set UserData", async ()=>{
+    // Users
+    let user = accounts[0];
+    let user2 = accounts[1];
 
-        const instance = await Piggy.new();
+    before( async () =>{
+        instance = await Piggy.new();
+    });
 
-        let newAccount1 = accounts[0];
-        let newAccount2 = accounts[1];
+    describe("User", ()=>{
+        it("should set UserData", async ()=>{
 
-        await instance.setUser({ name : "Ornek1" , age: 15 }, { from : newAccount1 });
-        await instance.setUser({ name : "Ornek2" , age: 16 }, { from : newAccount2 });
+            await instance.setUser("Ornek1" , 15 , {
+                from : user
+            });
+            await instance.setUser("Ornek2" , 16, {
+                from : user2
+            });
 
-        let returnedUserData1 = await instance.getUserData({ from : newAccount1 });
-        let returnedUserData2 = await instance.getUserData({ from : newAccount2 });
+            let returnedUserData1 = await instance.getUserData({
+                from : user
+            });
+            let returnedUserData2 = await instance.getUserData({
+                from : user2
+            });
 
-        assert.equal("Ornek1", returnedUserData1.name,"name was not equal");
-        assert.equal(15, returnedUserData1.age,"age was not equal");
+            assert.equal("Ornek1", returnedUserData1[0],"name was not equal");
+            assert.equal(15, returnedUserData1[1],"age was not equal");
+            assert.equal("Ornek2", returnedUserData2[0],"name was not equal");
+            assert.equal(16, returnedUserData2[1],"age was not equal");
 
-        assert.equal("Ornek2", returnedUserData2.name,"name was not equal");
-        assert.equal(16, returnedUserData2.age,"age was not equal");
+        });
+    });
 
-    })
+    describe("Money", ()=>{
 
-    it("should add Money", async ()=>{
+        describe("Adding", () => {
+            it("should add Money", async ()=>{
+                let user = accounts[0];
 
-        const instance = await Piggy.new();
+                await instance.addMoney(150, {
+                    from : user
+                });
+                await instance.addMoney(200, {
+                    from : user2
+                });
 
-        let user = accounts[0];
+                let returnedBalance = await instance.getBalance({
+                    from : user
+                });
+                let returnedBalance2 = await instance.getBalance({
+                    from : user2
+                });
 
-        await instance.addMoney(150, { from : user });
+                assert.equal(150, returnedBalance,"balance was not equal");
+                assert.equal(200, returnedBalance2,"balance was not equal");
 
-        let returnedBalance = await instance.getBalance({ from : user });
+            });
 
-        assert.equal(150, returnedBalance,"balance was not equal");
+            it("should not add negative Money", async ()=>{
+                try{
+                    let returnedData = await instance.addMoney(-50, {
+                        from : user
+                    });
+                    assert.equal(undefined, returnedData, "Tx should be undefined");
+                }catch (error) {
+                    assert.equal(
+                        true,
+                        error.message.includes("Money amount must be greater than 0"),
+                        "Money amount must be greater than 0"
+                    );
+                }
+            });
+        });
 
-    })
+        describe("Withdrawing", () => {
+            it("should withdraw Money", async ()=>{
+                await instance.withdrawMoney(120, {
+                    from : user
+                });
+                let returnedBalance = await instance.getBalance({
+                    from : user
+                });
+                await instance.withdrawMoney(40, {
+                    from : user2
+                });
+                let returnedBalance2 = await instance.getBalance({
+                    from : user2
+                });
 
-    it("should withdraw Money", async ()=>{
+                assert.equal(returnedBalance, 30,"balance was not equal");
+                assert.equal(returnedBalance2, 160,"balance was not equal");
+            });
 
-        const instance = await Piggy.new();
+            it("should not withdraw more Money than balance", async ()=>{
+                try{
+                    let returnedData = await instance.withdrawMoney(40, {
+                        from : user
+                    });
+                    assert.equal(undefined, returnedData, "Tx should be undefined");
+                }catch (error) {
+                    assert.equal(
+                        true,
+                        error.message.includes("Money amount must be less or equal than balance"),
+                        "Money amount must be less or equal than balance"
+                    );
+                }
+            })
 
-        let user = accounts[0];
+            it("should not withdraw negative Money", async ()=>{
+                try{
+                    let returnedData = await instance.withdrawMoney(-50, {
+                        from : user
+                    });
+                    assert.equal(undefined, returnedData, "Tx should be undefined");
+                }catch (error) {
+                    assert.equal(
+                        true,
+                        error.message.includes("Money amount must be greater than 0"),
+                        "Money amount must be greater than 0"
+                    );
+                }
+            });
+        });
 
-        await instance.addMoney(150, { from : user });
-        await instance.withdrawMoney(120, { from : user });
-
-        let returnedBalance = await instance.getBalance({ from : user });
-
-        assert.equal(30, returnedBalance,"balance was not equal");
-
-    })
+    });
 
 
-})
+});

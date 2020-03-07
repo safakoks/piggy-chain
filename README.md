@@ -1,12 +1,14 @@
 # Piggy Bank
-![Piggy Bank](src/piggy.png?raw=true "Title")
+![Piggy Bank](assets/piggy.png?raw=true "Title")
 
-A basic piggy bank example on Ethereum by using Truffle Suite and Solidity 0.6.0
+A basic piggy bank example on Ethereum by using Truffle Suite and Solidity 0.5.13
 ## Road Map
- - [x] Basic Contract
- - [x] Test Contract
- - [ ] React Web Interface
- - [ ] Blockchain Network Creation
+ - [x] Basic Contract and Test
+ - [ ] React Web Interface with Drizzle
+ - [ ] Custom Template
+ - [ ] Complex Contract and Test
+ - [ ] MetaMask Integration
+ - [ ] Blockchain Network Creation for Quorum
 
 
 
@@ -25,11 +27,23 @@ For checking version ```node -v```
 RPC URL can be changed in `truffle-config.js`
 
 ## Getting Start
-Installing node modules fo React
+Generate a network with Truffle
+```bash
+truffle compile;
+truffle develop;
+```
+Migrate the contracts inside the develop mode of Truffle
+```bash
+truffle(develop)> migrate
+truffle(develop)> test
+```
+Installing node modules of React and start
 ```bash
 cd client
 npm install
+npm start
 ```
+
 ## Testing
 
 Installing Truffle
