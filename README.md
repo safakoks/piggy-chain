@@ -1,5 +1,6 @@
 # Piggy Bank
-<img src="./assets/piggy.svg.svg" width="150px">
+![Alt text](./assets/piggy.svg.svg)
+<img src="./assets/piggy.svg.svg" width="200px">
 
 A basic piggy bank example on Ethereum by using Truffle Suite and Solidity 0.5.13
 ## Road Map
