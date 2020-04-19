@@ -13,10 +13,16 @@
 
 export default {
   name: 'App',
+  data : ()=>{
+    return {
+      web3Instance : undefined
+    }
+  },
   components: {
     AddMoneyComp,
     SetUserComp
-  }
+  },
+
 }
 </script>
 

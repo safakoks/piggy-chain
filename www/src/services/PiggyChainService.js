@@ -6,8 +6,12 @@ const contractAddress = '0x3D7b28F3360792DBe5Ed21aa352ECec00B66483F';
 
 class PiggyChainService {
 
+    constructor(){
+        this.web3 = Web3;
+    }
+
     getContract = async function() {
-        const web3 = await Web3()
+        const web3 = await this.web3()
         if (!web3) {
             return undefined
         }
@@ -43,7 +47,7 @@ class PiggyChainService {
     }
 
     getCurrentAccount = async function() {
-        const web3 = await Web3()
+        const web3 = await this.web3()
         if (!web3) {
             return undefined
         }
