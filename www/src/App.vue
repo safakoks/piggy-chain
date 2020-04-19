@@ -2,27 +2,47 @@
   <div id="app">
     <title>Piggy Chain</title>
     <img alt="Vue logo" src="./assets/piggy.svg">
-    <AddMoneyComp></AddMoneyComp>
-    <SetUserComp></SetUserComp>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import AddMoneyComp from './components/AddMoney.vue'
-  import SetUserComp from './components/SetUser.vue'
+  import Vue from 'vue'
+  import VueRouter from 'vue-router'
+  import PiggyChainService from "./services/PiggyChainService";
+
+  // Pages
+  import HomeView from './views/Home.vue'
+  import MoneyView from './views/Money.vue'
+  import UserView from './views/User.vue'
+
+  Vue.use(VueRouter)
+
+  const router = new VueRouter({
+    mode: 'history',
+    base: __dirname,
+    routes: [
+      { path: '/', name: 'home', component: HomeView },
+      { path: '/user', name: 'home', component: UserView },
+      { path: '/money', name: 'home', component: MoneyView },
+    ]
+  })
+
 
 export default {
+  router,
   name: 'App',
   data : ()=>{
     return {
-      web3Instance : undefined
+      PiggyChainIns : undefined
     }
   },
   components: {
-    AddMoneyComp,
-    SetUserComp
-  },
 
+  },
+  created() {
+    this.PiggyChainIns = new PiggyChainService(window);
+  }
 }
 </script>
 

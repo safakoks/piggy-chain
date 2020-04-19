@@ -1,11 +1,17 @@
 <template>
-    <div v-if="account">
-        {{account}}
+    <div>
+        <div v-if="account">
+            {{account}}
+        </div>
+
+        <div>
+        </div>
     </div>
+
 </template>
 
 <script>
-    import PiggyChainService from "../services/PiggyChainService";
+    import MainService  from "../services/MainService";
 
     export default {
         name: "CurrentAccount",
@@ -15,8 +21,7 @@
             }
         },
         created() {
-            let currentPiggyChain = new PiggyChainService();
-            currentPiggyChain.getCurrentAccount().then(returnedData =>{
+            MainService.PiggyChain.getCurrentAccount().then(returnedData =>{
                 this.account = returnedData;
             });
         }

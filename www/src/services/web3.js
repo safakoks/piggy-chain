@@ -6,11 +6,7 @@ export default async () => {
     if (typeof window !== 'undefined' && typeof window.ethereum != 'undefined') {
 
         try {
-            // Request account access
             await window.ethereum.enable()
-            // We are in the browser and web3 provider has been injected (probably by Metamask)
-            // Issue: https://github.com/ethereum/web3.js/issues/2640
-            // Use transactionConfirmationBlocks
             web3 = new Web3(window.ethereum, null, {transactionConfirmationBlocks: 1})
         } catch (error) {
             alert('Please, allow Metamask access to your account')

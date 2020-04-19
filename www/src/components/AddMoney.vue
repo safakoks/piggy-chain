@@ -9,7 +9,7 @@
 </template>
 
 <script>
-    import PiggyChainService from './../services/PiggyChainService'
+    import MainService  from "../services/MainService";
 
     export default  {
         name : 'AddMoney',
@@ -19,15 +19,13 @@
             }
         },
         created() {
-            let currentPiggyChain = new PiggyChainService();
-            currentPiggyChain.getUserData().then(returnedData =>{
+            MainService.PiggyChain.getUserData().then(returnedData =>{
                 this.userData = returnedData;
             });
         },
         methods: {
             addMoney: async (moneyAmount) => {
-                let currentPiggyChain =  new PiggyChainService();
-                await currentPiggyChain.addMoney(moneyAmount);
+                MainService.PiggyChain.addMoney(moneyAmount);
             }
         }
     }

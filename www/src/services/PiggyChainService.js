@@ -5,18 +5,17 @@ import Web3 from './web3'
 const contractAddress = '0x3D7b28F3360792DBe5Ed21aa352ECec00B66483F';
 
 class PiggyChainService {
-
     constructor(){
-        this.web3 = Web3;
+        this.web3 = Web3();
     }
 
     getContract = async function() {
-        const web3 = await this.web3()
-        if (!web3) {
+        // const web3 = await this.web3()
+        if (!this.web3) {
             return undefined
         }
 
-        const contract = await new web3.eth.Contract(Piggy.abi, contractAddress);
+        const contract = await new this.web3.eth.Contract(Piggy.abi, contractAddress);
         return contract.methods;
     }
 
@@ -47,7 +46,7 @@ class PiggyChainService {
     }
 
     getCurrentAccount = async function() {
-        const web3 = await this.web3()
+        const web3 = await this.web3
         if (!web3) {
             return undefined
         }

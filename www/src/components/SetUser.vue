@@ -2,17 +2,8 @@
 
 <div>
     <div>
-        <h3>
-            <CurrentAccountComp></CurrentAccountComp>
-        </h3>
-    </div>
-<!--    <div v-if="userData['0']">-->
-<!--        <p>{{userData[0]}}({{userData[1]}})</p>-->
-<!--    </div>-->
-
-    <div>
         <label for="userName" >Name : </label>
-        <input type="text" v-model="setUserData.name" id="userName">
+        <input type="text" v-model="setUserData.name" placeholder="Enter a username" id="userName">
         <br>
         <br>
         <label for="userAge" >Age : </label>
@@ -24,34 +15,29 @@
 </template>
 
 <script>
-    import PiggyChainService from "../services/PiggyChainService";
-    import CurrentAccountComp from './../components/CurrentAccount'
+    import MainService  from "../services/MainService";
 
     export default {
         name: "SetUser",
-        components: {
-            CurrentAccountComp
-        },
         data : ()=>{
             return {
-                userData : undefined,
                 setUserData : {
                     name : '',
-                    age : 0
+                    age : 20
                 }
             }
         },
         created() {
-            let currentPiggyChain = new PiggyChainService();
-            currentPiggyChain.getUserData().then(returnedData =>{
-                this.userData = returnedData;
+            MainService.PiggyChain.getUserData().then(returnedData =>{
+                if(returnedData.length === 2){
+                    this.setUserData.name = returnedData[0];
+                    this.setUserData.age = returnedData[1];
+                }
             });
-
         },
         methods : {
             setUser : async (userData)=>{
-                let currentPiggyChain = new PiggyChainService();
-                await currentPiggyChain.setUser(userData);
+                MainService.PiggyChain.setUser(userData);
             }
         }
     }
