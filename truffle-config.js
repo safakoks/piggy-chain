@@ -37,7 +37,7 @@ module.exports = {
    * $ truffle test --network <network-name>
    */
 
-  contracts_build_directory: path.join(__dirname, "client/src/contracts"),
+  contracts_build_directory: path.join(__dirname, "www/src/contracts"),
 
   networks: {
     // Useful for testing. The `development` name is special - truffle uses it by default
@@ -52,6 +52,12 @@ module.exports = {
         network_id: "*",       // Any network (default: none)
         type:"quorum",
         gasPrice : 0
+    },
+    ganache: {
+      host: "127.0.0.1",     // Localhost (default: none)
+      port: 3535,            // Standard Ethereum port (default: none)
+      network_id: "*",       // Any network (default: none)
+      gasPrice : 0
     },
     develop :{
         accounts : 15,
