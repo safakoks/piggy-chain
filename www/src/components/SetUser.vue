@@ -15,8 +15,6 @@
 </template>
 
 <script>
-    import MainService  from "../services/MainService";
-
     export default {
         name: "SetUser",
         data : ()=>{
@@ -28,7 +26,7 @@
             }
         },
         created() {
-            MainService.PiggyChain.getUserData().then(returnedData =>{
+            window.PiggyChain.getUserData().then(returnedData =>{
                 if(returnedData.length === 2){
                     this.setUserData.name = returnedData[0];
                     this.setUserData.age = returnedData[1];
@@ -37,7 +35,7 @@
         },
         methods : {
             setUser : async (userData)=>{
-                MainService.PiggyChain.setUser(userData);
+                window.PiggyChain.setUser(userData);
             }
         }
     }

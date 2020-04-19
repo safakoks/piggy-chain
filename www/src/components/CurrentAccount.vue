@@ -11,8 +11,6 @@
 </template>
 
 <script>
-    import MainService  from "../services/MainService";
-
     export default {
         name: "CurrentAccount",
         data: ()=>{
@@ -21,7 +19,7 @@
             }
         },
         created() {
-            MainService.PiggyChain.getCurrentAccount().then(returnedData =>{
+            window.PiggyChain.ethereumService.getCurrentAccount().then(returnedData =>{
                 this.account = returnedData;
             });
         }
