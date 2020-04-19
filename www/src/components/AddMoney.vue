@@ -1,11 +1,15 @@
 
 <template>
-    <div>
-        <label for="MoneyAmount">Money Amount : </label>
-        <input v-model="moneyAmount" placeholder="Write amount" id="MoneyAmount">
-        <button v-on:click="PiggyChain.addMoney(moneyAmount)" class="btn btn-primary">Add Money</button>
-        <h3>Will added money : {{moneyAmount}}</h3>
-    </div>
+
+        <div class="input-group col-md-6">
+
+            <label for="MoneyAmount">Add Money Amount</label>
+            <input  class="form-control" v-model="moneyAmount" placeholder="Write amount" id="MoneyAmount">
+            <button v-on:click="PiggyChain.addMoney(moneyAmount)" class="btn btn-primary">Add Money</button>
+
+        </div>
+
+
 </template>
 
 <script>

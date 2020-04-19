@@ -5,6 +5,13 @@ class PiggyChainService {
         this.ethereumService = ethereumService;
     }
 
+    withdrawMoney = async function(moneyAmount){
+        let currentAccount = await this.ethereumService.getCurrentAccount();
+        this.contract.withdrawMoney(moneyAmount).send({
+            from : currentAccount
+        })
+    }
+
     addMoney = async function (moneyAmount){
         let currentAccount = await this.ethereumService.getCurrentAccount();
         this.contract.addMoney(moneyAmount).send({

@@ -2,7 +2,10 @@
   <div id="app">
     <title>Piggy Chain</title>
     <img alt="Vue logo" src="./assets/piggy.svg">
-    <router-view></router-view>
+    <div class="container">
+      <router-view></router-view>
+
+    </div>
   </div>
 </template>
 
