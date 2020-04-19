@@ -15,7 +15,9 @@ limitations under the License.
 */
 
 const Piggy = artifacts.require("Piggy");
+const PiggyWithEvents = artifacts.require("PiggyWithEvents");
 
 module.exports = function(deployer) {
     deployer.deploy(Piggy);
+    deployer.deploy(PiggyWithEvents);
 };
