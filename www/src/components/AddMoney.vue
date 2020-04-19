@@ -3,7 +3,7 @@
     <div>
         <label for="MoneyAmount">Money Amount : </label>
         <input v-model="moneyAmount" placeholder="Write amount" id="MoneyAmount">
-        <button v-on:click="addMoney(moneyAmount)" class="btn btn-primary">Add Money</button>
+        <button v-on:click="PiggyChain.addMoney(moneyAmount)" class="btn btn-primary">Add Money</button>
         <h3>Will added money : {{moneyAmount}}</h3>
     </div>
 </template>
@@ -14,11 +14,6 @@
         data : function() {
             return {
                 moneyAmount: undefined
-            }
-        },
-        methods: {
-            addMoney: async (moneyAmount) => {
-                window.PiggyChain.addMoney(moneyAmount);
             }
         }
     }

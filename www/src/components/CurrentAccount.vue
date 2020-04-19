@@ -19,7 +19,7 @@
             }
         },
         created() {
-            window.PiggyChain.ethereumService.getCurrentAccount().then(returnedData =>{
+            this.PiggyChain.ethereumService.getCurrentAccount().then(returnedData =>{
                 this.account = returnedData;
             });
         }

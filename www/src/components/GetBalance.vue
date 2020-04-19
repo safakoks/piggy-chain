@@ -1,5 +1,5 @@
 <template>
-        <div>{{ balance }}</div>
+    <div>{{ balance }}</div>
 </template>
 
 <script>
@@ -11,9 +11,9 @@
             }
         },
         created() {
-                window.PiggyChain.getBalance().then(result=>{
-                        this.balance = result;
-                });
+            this.PiggyChain.getBalance().then(result=>{
+                this.balance = result;
+            });
         }
     }
 </script>
