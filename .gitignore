@@ -1,3 +1,2 @@
-client/node_modules
+www/node_modules
 .idea
-client/src/contracts
