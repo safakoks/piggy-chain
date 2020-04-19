@@ -9,8 +9,6 @@
 </template>
 
 <script>
-    import MainService  from "../services/MainService";
-
     export default  {
         name : 'AddMoney',
         data : function() {
@@ -18,14 +16,9 @@
                 moneyAmount: undefined
             }
         },
-        created() {
-            MainService.PiggyChain.getUserData().then(returnedData =>{
-                this.userData = returnedData;
-            });
-        },
         methods: {
             addMoney: async (moneyAmount) => {
-                MainService.PiggyChain.addMoney(moneyAmount);
+                window.PiggyChain.addMoney(moneyAmount);
             }
         }
     }
