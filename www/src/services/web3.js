@@ -1,6 +1,6 @@
 import Web3 from 'web3'
 
-module.exports = async () => {
+export default async () => {
     let web3
 
     if (typeof window !== 'undefined' && typeof window.ethereum != 'undefined') {
@@ -14,7 +14,6 @@ module.exports = async () => {
             web3 = new Web3(window.ethereum, null, {transactionConfirmationBlocks: 1})
         } catch (error) {
             alert('Please, allow Metamask access to your account')
-
         }
     } else if (typeof window !== 'undefined' && typeof window.web3 != 'undefined') {
         // Legacy purpose. Web3.provider is injected in window.ethereum
