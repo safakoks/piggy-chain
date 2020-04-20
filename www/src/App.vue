@@ -2,14 +2,17 @@
   <div id="app">
     <title>Piggy Chain</title>
     <img alt="Vue logo" src="./assets/piggy.svg">
-    <router-view></router-view>
+    <div class="container">
+      <router-view></router-view>
+
+    </div>
   </div>
 </template>
 
 <script>
   import Vue from 'vue'
   import VueRouter from 'vue-router'
-  import PiggyChainService from "./services/PiggyChainService";
+
 
   // Pages
   import HomeView from './views/Home.vue'
@@ -23,8 +26,8 @@
     base: __dirname,
     routes: [
       { path: '/', name: 'home', component: HomeView },
-      { path: '/user', name: 'home', component: UserView },
-      { path: '/money', name: 'home', component: MoneyView },
+      { path: '/user', name: 'user', component: UserView },
+      { path: '/money', name: 'money', component: MoneyView },
     ]
   })
 
@@ -34,14 +37,8 @@ export default {
   name: 'App',
   data : ()=>{
     return {
-      PiggyChainIns : undefined
-    }
-  },
-  components: {
 
-  },
-  created() {
-    this.PiggyChainIns = new PiggyChainService(window);
+    }
   }
 }
 </script>

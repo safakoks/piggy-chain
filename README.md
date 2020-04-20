@@ -7,10 +7,10 @@ A basic piggy bank example on Ethereum by using Truffle Suite and Solidity 0.5.1
 
  - [x] Basic Contract and Test
  - [x] Vue Web Core
+ - [x] MetaMask Integration
  - [ ] Implement all functions on Vue UI
  - [ ] Custom Template
  - [ ] Complex Contract and Test
- - [ ] MetaMask Integration
  - [ ] Blockchain Network Creation for Quorum
 
 
@@ -31,21 +31,28 @@ RPC URL can be changed in `truffle-config.js`
 
 ## Getting Start
 Generate a network with Truffle
+
 ```bash
 truffle compile;
 truffle develop;
 ```
+
 Migrate the contracts inside the develop mode of Truffle
+
 ```bash
 truffle(develop)> migrate
 truffle(develop)> test
 ```
-Installing node modules of React and start
+
+Installing node modules of Vue and start
+
 ```bash
-cd client
+cd ./www
 npm install
-npm start
+npm run build
+npm run serve
 ```
+
 
 ## Testing
 
