@@ -1,13 +1,15 @@
 <template>
-    <div>
-        <div v-if="account">
-            {{account}}
-        </div>
+    <md-card>
+        <md-card-content>
+            <md-card-header class="h3">
+                Current Amount
+            </md-card-header>
+            <md-highlight-text>
+                {{account}}
+            </md-highlight-text>
+        </md-card-content>
 
-        <div>
-        </div>
-    </div>
-
+    </md-card>
 </template>
 
 <script>

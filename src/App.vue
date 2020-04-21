@@ -1,55 +1,102 @@
 <template>
-  <div id="app">
-    <title>Piggy Chain</title>
-    <img alt="Vue logo" src="./assets/piggy.svg">
-    <div class="container">
-      <router-view></router-view>
+        <div class="page-container">
+            <md-app md-waterfall md-mode="fixed">
+                <md-app-toolbar>
+                    <span class="md-title">{{'AAA'}}</span>
+                </md-app-toolbar>
 
-    </div>
-  </div>
+                <md-app-drawer md-permanent="full">
+                    <router-link
+                            to="/"
+                            v-slot="{ href }"
+                    >
+                    <md-toolbar class="md-transparent h4" md-elevation="0">
+                        <a :href="href">
+                            <img class="piggy-logo" src="./assets/piggy.svg"/>
+                        </a>
+                        <span class="app-title">Piggy Chain</span>
+
+                    </md-toolbar>
+                    </router-link>
+
+                    <md-list>
+
+                        <router-link
+                                to="/money"
+                                v-slot="{ href }"
+                        >
+                        <md-list-item :href="href">
+                            <md-icon>account_balance_wallet</md-icon>
+                            <span class="md-list-item-text" >Money</span>
+                        </md-list-item>
+                        </router-link>
+
+                        <router-link
+                                to="/user"
+                                v-slot="{ href }"
+                        >
+                        <md-list-item :href="href">
+                            <md-icon>account_circle</md-icon>
+                            <span class="md-list-item-text">User</span>
+                        </md-list-item>
+                        </router-link>
+
+                        <md-list-item>
+                            <md-icon>email</md-icon>
+                            <span class="md-list-item-text">Contact</span>
+                        </md-list-item>
+                    </md-list>
+                </md-app-drawer>
+
+                <md-app-content>
+                    <router-view></router-view>
+                </md-app-content>
+            </md-app>
+        </div>
 </template>
 
 <script>
-  import Vue from 'vue'
-  import VueRouter from 'vue-router'
-
-
-  // Pages
-  import HomeView from './views/Home.vue'
-  import MoneyView from './views/Money.vue'
-  import UserView from './views/User.vue'
-
-  Vue.use(VueRouter)
-
-  const router = new VueRouter({
-    mode: 'history',
-    base: __dirname,
-    routes: [
-      { path: '/', name: 'home', component: HomeView },
-      { path: '/user', name: 'user', component: UserView },
-      { path: '/money', name: 'money', component: MoneyView },
-    ]
-  })
-
 
 export default {
-  router,
   name: 'App',
-  data : ()=>{
-    return {
-
-    }
-  }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+    .md-toolbar{
+        font-weight: bolder;
+    }
+
+    .md-app-toolbar{
+        background-color: #ECAAAA;
+    }
+
+    .app-title {
+        margin-left: 10%;
+        font-size: 30px;
+        font-weight: bolder;
+        color: #FFB8B8;
+    }
+
+    .md-title{
+        font-size: 25px;
+        font-weight: bolder;
+        color: white !important;
+    }
+
+    .piggy-logo {
+        width: 75px;
+        margin: 5px;
+    }
+    .md-app {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #2c3e50;
+        margin-top: 10px;
+    }
+
+    .md-content {
+        padding: 1px 16px;
+    }
 </style>

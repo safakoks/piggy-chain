@@ -1,17 +1,26 @@
 <template>
+<md-card>
+    <md-card-header>
+        <md-card-header-text>
+            User Settings
+        </md-card-header-text>
+    </md-card-header>
+    <md-card-content>
+        <md-field>
+            <label for="userName" >Username </label>
+            <md-input  type="text" v-model="setUserData.name" id="userName"/>
+        </md-field>
+        <md-field>
+            <label for="userAge" >Age </label>
+            <md-input  type="number" v-model="setUserData.age" id="userAge"/>
+        </md-field>
 
-<div>
-    <div>
-        <label for="userName" >Name : </label>
-        <input type="text" v-model="setUserData.name" placeholder="Enter a username" id="userName">
-        <br>
-        <br>
-        <label for="userAge" >Age : </label>
-        <input type="number" v-model="setUserData.age" id="userAge">
-        <br>
-        <button v-on:click="PiggyChain.setUser(userData)">Change User Profile</button>
-    </div>
-</div>
+
+    </md-card-content>
+    <md-card-actions>
+        <md-button class="md-raised md-primary" v-on:click="PiggyChain.setUser(setUserData)">Change User Profile</md-button>
+    </md-card-actions>
+</md-card>
 </template>
 
 <script>

@@ -1,5 +1,10 @@
 <template>
-    <div>{{ balance }}</div>
+    <md-card>
+        <md-card-header class="h3">
+            Balance :                 {{ balance }}
+
+        </md-card-header>
+    </md-card>
 </template>
 
 <script>
@@ -18,6 +23,3 @@
     }
 </script>
 
-<style scoped>
-
-</style>

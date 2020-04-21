@@ -1,7 +1,14 @@
 <template>
     <div>
-        <h3>Home</h3>
-        <CurrentAccount></CurrentAccount>
+        <md-card>
+            <md-card-header>
+                <div class="md-title">Current Account Address</div>
+            </md-card-header>
+
+            <md-card-content>
+                <CurrentAccount></CurrentAccount></md-card-content>
+
+        </md-card>
     </div>
 
 </template>
@@ -9,9 +16,16 @@
 <script>
     import CurrentAccount from "../components/CurrentAccount";
 
-
     export default {
         name: "home",
+        data: ()=>{
+          return {
+              title:'DENE'
+          }
+        },
+        created() {
+            this.menuTitle = 'Home';
+        },
         components:{
             CurrentAccount
         }

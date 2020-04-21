@@ -1,10 +1,16 @@
 
 <template>
-    <div>
-        <label for="MoneyAmount">Withdraw Money Amount</label>
-        <input v-model="moneyAmount" placeholder="Write amount" id="MoneyAmount">
-        <button v-on:click="PiggyChain.withdrawMoney(moneyAmount)" class="btn btn-danger">Withdraw Money</button>
-    </div>
+    <md-card>
+        <md-card-header> Withdraw Money Amount </md-card-header>
+        <md-card-content>
+            <md-field>
+            <md-input type="number"  v-model="moneyAmount" placeholder="Write amount" id="MoneyAmount"> </md-input>
+            </md-field>
+        </md-card-content>
+        <md-card-actions>
+            <md-button v-on:click="PiggyChain.withdrawMoney(moneyAmount)" class="md-accent">Withdraw</md-button>
+        </md-card-actions>
+    </md-card>
 </template>
 
 <script>
@@ -12,7 +18,7 @@
         name : 'WithdrawMoney',
         data : function() {
             return {
-                moneyAmount: undefined
+                moneyAmount: 0
             }
         }
     }
