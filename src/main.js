@@ -9,11 +9,12 @@ import VueMaterial from 'vue-material';
 import Vue from 'vue'
 import router from './router';
 
+Vue.use(VueMaterial);
 
-Vue.use(VueMaterial)
-
-
-MainService.createPiggyChain().then((PiggyChain)=>{
+MainService.createPiggyChain().then(({PiggyChain, error})=>{
+  if(error) {
+    Vue.prototype.Web3Error = error;
+  }
   Vue.prototype.PiggyChain = PiggyChain
 
   Vue.config.productionTip = false

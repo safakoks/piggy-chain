@@ -2,7 +2,7 @@
         <div class="page-container">
             <md-app md-waterfall md-mode="fixed">
                 <md-app-toolbar>
-                    <span class="md-title">{{'AAA'}}</span>
+                    <span class="md-title"></span>
                 </md-app-toolbar>
 
                 <md-app-drawer md-permanent="full">
@@ -20,7 +20,15 @@
                     </router-link>
 
                     <md-list>
-
+                        <router-link
+                                to="/"
+                                v-slot="{ href }"
+                        >
+                            <md-list-item :href="href">
+                                <md-icon>home</md-icon>
+                                <span class="md-list-item-text" >Home</span>
+                            </md-list-item>
+                        </router-link>
                         <router-link
                                 to="/money"
                                 v-slot="{ href }"
@@ -48,9 +56,16 @@
                     </md-list>
                 </md-app-drawer>
 
-                <md-app-content>
+                <md-app-content v-if="!Web3Error" >
                     <router-view></router-view>
                 </md-app-content>
+                <md-app-content v-if="Web3Error" >
+                    <md-card class="col-md-6 md-accent">
+                        <md-card-header class="h3"> Connection Error</md-card-header>
+                        <md-card-content> {{Web3Error}}</md-card-content>
+                    </md-card>
+                </md-app-content>
+
             </md-app>
         </div>
 </template>
@@ -68,14 +83,14 @@ export default {
     }
 
     .md-app-toolbar{
-        background-color: #ECAAAA;
+        background-color: #ECAAAA !important;
     }
 
     .app-title {
         margin-left: 10%;
         font-size: 30px;
         font-weight: bolder;
-        color: #FFB8B8;
+        color: #ffb8b8;
     }
 
     .md-title{
@@ -99,4 +114,5 @@ export default {
     .md-content {
         padding: 1px 16px;
     }
+
 </style>

@@ -7,11 +7,18 @@ import Piggy from "../contracts/Piggy.json";
 const contractAddress = '0x3D7b28F3360792DBe5Ed21aa352ECec00B66483F';
 
 async function createPiggyChain() {
-    let Web3 = await web3();
+    let {Web3, error} = await web3();
+    if(error){
+        return {
+            error
+        };
+    }
     let CreatedEthereumService = new EthereumService(Web3.eth);
     const contract = await new Web3.eth.Contract(Piggy.abi, contractAddress);
     let PiggyChain = new PiggyChainService(contract, CreatedEthereumService);
-    return PiggyChain;
+    return {
+        PiggyChain
+    };
 }
 
 

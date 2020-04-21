@@ -1,15 +1,5 @@
 <template>
-    <md-card>
-        <md-card-content>
-            <md-card-header class="h3">
-                Current Amount
-            </md-card-header>
-            <md-highlight-text>
-                {{account}}
-            </md-highlight-text>
-        </md-card-content>
-
-    </md-card>
+   <span>{{account}}</span>
 </template>
 
 <script>
