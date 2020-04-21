@@ -16,14 +16,14 @@ limitations under the License.
 
 <template>
     <md-card>
-        <md-card-header>
+        <md-card-header class="h4">
             User Information
         </md-card-header>
         <md-card-content>
             <md-table>
-                <md-table-row>
+                <md-table-row >
                     <md-table-cell>
-                        Username
+                     <md-icon class="md-size-2x">account_circle</md-icon>   Username
                     </md-table-cell>
                     <md-table-cell v-if="userData.name">
                         {{userData.name}}
@@ -34,6 +34,7 @@ limitations under the License.
                 </md-table-row>
                 <md-table-row>
                     <md-table-cell>
+                        <md-icon class="md-size-2x">event</md-icon>
                         Age
                     </md-table-cell>
                     <md-table-cell v-if="userData.age">
@@ -70,3 +71,11 @@ limitations under the License.
     }
 </script>
 
+
+<style lang="scss">
+.md-table-cell {
+    font-size: 18px !important;
+
+}
+
+</style>

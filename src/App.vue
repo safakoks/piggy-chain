@@ -64,11 +64,6 @@ limitations under the License.
                             <span class="md-list-item-text">User</span>
                         </md-list-item>
                         </router-link>
-
-                        <md-list-item>
-                            <md-icon>email</md-icon>
-                            <span class="md-list-item-text">Contact</span>
-                        </md-list-item>
                     </md-list>
                 </md-app-drawer>
 
@@ -98,15 +93,20 @@ export default {
         font-weight: bolder;
     }
 
+    .md-list-item-text{
+        font-size: 20px;
+        font-weight: inherit;
+    }
     .md-app-toolbar{
-        background-color: #ECAAAA !important;
+        background-color: #ffb8b8 !important;
     }
 
     .app-title {
         margin-left: 10%;
         font-size: 30px;
+        font-family: Helvetica;
         font-weight: bolder;
-        color: #ffb8b8;
+        color: #22559C;
     }
 
     .md-title{

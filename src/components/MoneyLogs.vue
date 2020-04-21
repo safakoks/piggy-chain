@@ -21,7 +21,9 @@ limitations under the License.
                 <div class="md-primary h4">Logs</div>
             </md-card-header>
             <md-card-content>
-                <md-list>
+                <md-progress-bar  v-if="!moneyLogs" class="md-accent" md-mode="indeterminate"></md-progress-bar>
+
+                <md-list v-if="moneyLogs">
                     <md-list-item class=" md-card mb-2 " v-for="log in moneyLogs"  :key="log.data">
                         <div class="md-card-header">
                             <md-icon class="md-size-2x md-primary" v-if="log.data.processType">add_circle</md-icon>

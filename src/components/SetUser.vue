@@ -17,7 +17,7 @@ limitations under the License.
 <template>
 <md-card>
     <md-card-header>
-        <md-card-header-text>
+        <md-card-header-text class="h4">
             User Settings
         </md-card-header-text>
     </md-card-header>

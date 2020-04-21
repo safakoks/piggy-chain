@@ -17,27 +17,30 @@ limitations under the License.
 <template>
     <div class="row">
             <md-card>
-                <md-card-header class="text-center">
-                    <md-icon class="md-size-2x">assignment</md-icon>
-                    Current Account
+                <md-card-header class="text-center font-weight-bold h4">
+                    <md-icon class="md-size-2x">person</md-icon>
+                    <p class="mt-3">Current Account</p>
                 </md-card-header>
                 <md-card-content>
-                    <md-card-area>
+                    <md-card-area class="h5 border p-2">
                         <current-account></current-account>
                     </md-card-area>
                 </md-card-content>
             </md-card>
-
             <md-card>
-                <md-card-header class="text-center">
+                <md-card-header class="text-center font-weight-bold h4">
                     <md-icon class="md-size-2x">description</md-icon>
-                    Contract
+                    <p class="mt-3">Contract</p>
                 </md-card-header>
                 <md-card-content>
-                    <md-card-area>
-                     <MoneyLogs></MoneyLogs>
-                    </md-card-area>
+                            0x34e064c64d5867c200b5c1e1587939377e295ab4
                 </md-card-content>
+
+                <a target="_blank" href="https://ropsten.etherscan.io/address/0x3d7b28f3360792dbe5ed21aa352ecec00b66483f">
+                    <md-button class="md-raised md-accent">Get Contract</md-button>
+                </a>
+
+
             </md-card>
 
 
