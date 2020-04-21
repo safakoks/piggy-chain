@@ -23,6 +23,8 @@ class EthereumService {
         const accounts = await this.web3Eth.getAccounts()
         return (accounts && accounts.length>0)?accounts[0]: undefined
     }
+
+
 }
 
 export default EthereumService;

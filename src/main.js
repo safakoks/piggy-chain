@@ -28,9 +28,8 @@ import router from './router';
 Vue.use(VueMaterial);
 
 MainService.createPiggyChain().then(({PiggyChain, error})=>{
-  if(error) {
-    Vue.prototype.Web3Error = error;
-  }
+
+  Vue.prototype.Web3Error = error;
   Vue.prototype.PiggyChain = PiggyChain
 
   Vue.config.productionTip = false

@@ -8,8 +8,8 @@ A basic piggy bank example on Ethereum by using Truffle Suite and Solidity 0.5.1
  - [x] Basic Contract and Test
  - [x] Vue Web Core
  - [x] MetaMask Integration
- - [ ] Implement all functions on Vue UI
- - [ ] Custom Template
+ - [x] Implement all functions on Vue UI
+ - [x] Custom Template
  - [ ] Complex Contract and Test
 
 

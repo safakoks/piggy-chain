@@ -15,7 +15,10 @@ limitations under the License.
 -->
 
 <template>
-   <span>{{account}}</span>
+   <div class="text-center">
+      <md-progress-spinner v-if="!account" md-mode="indeterminate"></md-progress-spinner>
+      <span  v-if="account">{{account}}</span>
+   </div>
 </template>
 
 <script>

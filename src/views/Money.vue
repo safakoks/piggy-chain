@@ -17,14 +17,19 @@ limitations under the License.
 <template>
 <div>
     <get-balance></get-balance>
-<div class="row">
-    <div class="col-md-6">
-        <AddMoney></AddMoney>
+    <div class="row text-center">
+        <div class="col-md-6">
+            <AddMoney></AddMoney>
+        </div>
+        <div class="col-md-6">
+            <WithdrawMoney></WithdrawMoney>
+        </div>
+
+        <div class="col-md-12">
+            <MoneyLogs></MoneyLogs>
+        </div>
+
     </div>
-    <div class="col-md-6">
-        <WithdrawMoney></WithdrawMoney>
-    </div>
-</div>
 
 </div>
 </template>
@@ -34,6 +39,9 @@ limitations under the License.
     import AddMoney from "../components/AddMoney";
     import WithdrawMoney from "../components/WithdrawMoney";
     import GetBalance from "../components/GetBalance";
+    import MoneyLogs from "../components/MoneyLogs";
+
+
     export default {
         name: "Money",
         created() {
@@ -42,7 +50,8 @@ limitations under the License.
         components : {
             GetBalance,
             AddMoney,
-            WithdrawMoney
+            WithdrawMoney,
+            MoneyLogs
         }
     }
 </script>

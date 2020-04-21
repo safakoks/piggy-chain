@@ -16,6 +16,7 @@ limitations under the License.
 
 class PiggyChainService {
     constructor(contract, ethereumService){
+        this.contractIns = contract;
         this.contract = contract.methods;
         this.ethereumService = ethereumService;
     }
@@ -31,7 +32,7 @@ class PiggyChainService {
         let currentAccount = await this.ethereumService.getCurrentAccount();
         this.contract.addMoney(moneyAmount).send({
             from : currentAccount
-        });
+        }).then(console.log).catch(console.log);
     }
 
     setUser = async function ({name, age}){
@@ -57,6 +58,36 @@ class PiggyChainService {
         return returnedData;
     }
 
+    getEventLogs = async function(eventName, filter){
+        let eventLogs = await  this.contractIns.getPastEvents(eventName, filter);
+        let mappedLogs = await eventLogs.map(value => {
+            return {
+                data : value.returnValues,
+                txHash : value.transactionHash,
+                blockNumber : value.blockNumber,
+                blockHash : value.blockHash
+            };
+        })
+        return  mappedLogs;
+    }
+
+    getMoneyLogs = async function() {
+        let currentAccount = await this.ethereumService.getCurrentAccount();
+
+        let changes = await this.contract.getChanges().call({
+            from : currentAccount
+        });
+        console.log(changes);
+        let returnedData = await  this.getEventLogs("MoneyProcessEvent", {
+            filter : {
+                address : currentAccount
+            },
+            fromBlock : changes[0],
+        });
+
+
+        return  returnedData;
+    }
 
 }
 

@@ -17,10 +17,17 @@ limitations under the License.
 import PiggyChainService from "./PiggyChainService";
 import EthereumService from "./EthereumService";
 import web3 from './web3'
-import Piggy from "../contracts/Piggy.json";
+// import Piggy from "../contracts/Piggy.json";
+import PiggyWithEvents from "../contracts/PiggyWithEvents.json";
 
+// Piggy
 // Ropsten Contract : https://ropsten.etherscan.io/address/0x3d7b28f3360792dbe5ed21aa352ecec00b66483f
-const contractAddress = '0x3D7b28F3360792DBe5Ed21aa352ECec00B66483F';
+// const contractAddress = '0x3D7b28F3360792DBe5Ed21aa352ECec00B66483F';
+
+// Piggy With Events
+// Ropsten Contract : https://ropsten.etherscan.io/address/0x34e064c64d5867c200b5c1e1587939377e295ab4
+const contractAddress = '0x34e064c64d5867c200b5c1e1587939377e295ab4';
+
 
 async function createPiggyChain() {
     let {Web3, error} = await web3();
@@ -30,7 +37,7 @@ async function createPiggyChain() {
         };
     }
     let CreatedEthereumService = new EthereumService(Web3.eth);
-    const contract = await new Web3.eth.Contract(Piggy.abi, contractAddress);
+    const contract = await new Web3.eth.Contract(PiggyWithEvents.abi, contractAddress);
     let PiggyChain = new PiggyChainService(contract, CreatedEthereumService);
     return {
         PiggyChain

@@ -15,12 +15,17 @@ limitations under the License.
 -->
 
 <template>
-    <md-card>
-        <md-card-header class="h3">
-            Balance :                 {{ balance }}
+    <div>
 
-        </md-card-header>
-    </md-card>
+        <md-card >
+            <md-progress-bar v-if="!balance" md-mode="indeterminate"></md-progress-bar>
+            <md-card-header v-if="balance" class="h3">
+                Balance :                 {{ balance }}
+            </md-card-header>
+        </md-card>
+
+    </div>
+
 </template>
 
 <script>
@@ -28,7 +33,7 @@ limitations under the License.
         name: "GetBalance",
         data: ()=> {
             return {
-                balance: 0
+                balance: undefined
             }
         },
         created() {
