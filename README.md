@@ -3,6 +3,9 @@
 <img src="./src/assets/piggy.svg" width="250px" />
 
 A basic piggy bank example on Ethereum by using Truffle Suite and Solidity 0.5.13
+
+[For Ethereum Contract on Ropsten Network](https://ropsten.etherscan.io/address/0x3d7b28f3360792dbe5ed21aa352ecec00b66483f)
+
 ## Road Map
 
  - [x] Basic Contract and Test
@@ -11,8 +14,6 @@ A basic piggy bank example on Ethereum by using Truffle Suite and Solidity 0.5.1
  - [x] Implement all functions on Vue UI
  - [x] Custom Template
  - [ ] Complex Contract and Test
-
-
 
 ## Requirements
 
@@ -52,7 +53,6 @@ npm run build
 npm run serve
 ```
 
-
 ## Testing
 
 Installing Truffle
@@ -87,7 +87,12 @@ truffle migrate --network remote;
 truffle test --network remote;
 ```
 
+## Screenshots
 
+<img src="./screenshots/home.png" width="250px" />
+<img src="./screenshots/money.png" width="250px" />
+<img src="./screenshots/user.png" width="250px" />
+<img src="./screenshots/transaction.png" width="250px" />
 
 # License
 Copyright 2020 - Şafak Öksüzer, Berkay Korkmaz
